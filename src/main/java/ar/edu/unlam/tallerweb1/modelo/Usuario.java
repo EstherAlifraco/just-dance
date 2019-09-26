@@ -1,9 +1,10 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.*;
 
 // Clase que modela el concepto de Usuario, la anotacion @Entity le avisa a hibernate que esta clase es persistible
 // el paquete ar.edu.unlam.tallerweb1.modelo esta indicado en el archivo hibernateCOntext.xml para que hibernate
@@ -20,22 +21,33 @@ public class Usuario {
 	private String email;
 	private String password;
 	private String rol;
+	private String nombre;
+	private String apellido;
+	private Long dni;
 	
+	@ManyToMany(mappedBy = "usuario")
+	private Set<Clase> clase = new HashSet<>();
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -47,4 +59,39 @@ public class Usuario {
 	public void setRol(String rol) {
 		this.rol = rol;
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public Long getDni() {
+		return dni;
+	}
+
+	public void setDni(Long dni) {
+		this.dni = dni;
+	}
+
+	public Set<Clase> getClase() {
+		return clase;
+	}
+
+	public void setClase(Set<Clase> clase) {
+		this.clase = clase;
+	}
+	
+	
+	
 }

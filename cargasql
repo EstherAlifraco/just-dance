@@ -1,0 +1,15 @@
+create database db;
+use db;
+
+INSERT INTO Usuario(id,email,password,rol,nombre) 
+VALUES  (10,'usuario2@gmail.com','456','profesor','Florencia'),
+		(11,'soledad@gmail.com','789','profesor','Soledad'),
+		(12,'lucy@gmail.com','111','profesor','Lucy'),
+        (14,'alumno@gmail.com','333','alumno','Esther'),
+		(15,'cli@gmail.com','222','alumno','Pauly'); 
+
+INSERT INTO Clase(id, nombreClase, nombreProfesor, clase_profesor)
+VALUES      (1,'Danza Clasica', 'Florencia',10),
+			(2,'Danza Ritmica', 'Soledad',11),
+            (3,'Tango', 'Soledad',11),
+            (4,'Zumba', 'Lucy',12);
